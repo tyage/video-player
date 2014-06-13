@@ -1,0 +1,16 @@
+# See https://atom.io/docs/latest/creating-a-package#menus for more details
+'context-menu':
+  '.overlayer':
+      'Enable movie-player': 'movie-player:toggle'
+
+'menu': [
+  {
+    'label': 'Packages'
+    'submenu': [
+      'label': 'movie-player'
+      'submenu': [
+        { 'label': 'Toggle', 'command': 'movie-player:toggle' }
+      ]
+    ]
+  }
+]

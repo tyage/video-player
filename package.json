@@ -1,0 +1,14 @@
+{
+  "name": "movie-player",
+  "main": "./lib/movie-player",
+  "version": "0.1.0",
+  "description": "Movie player for Atom.",
+  "activationEvents": ["movie-player:toggle"],
+  "repository": "https://github.com/tyage/movie-player",
+  "license": "MIT",
+  "engines": {
+    "atom": ">0.50.0"
+  },
+  "dependencies": {
+  }
+}
