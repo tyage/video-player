@@ -14,13 +14,13 @@ streaming = (input, port, errorCallback) ->
     errorCallback data
 
 module.exports =
-class MoviePlayerView extends View
+class VideoPlayerView extends View
   @content: ->
-    @div class: 'movie-player', =>
+    @div class: 'video-player', =>
       @video autoplay: true
 
   initialize: (serializeState) ->
-    atom.workspaceView.command "movie-player:toggle", => @toggle()
+    atom.workspaceView.command "video-player:toggle", => @toggle()
 
   # Returns an object that can be retrieved when package is activated
   serialize: ->
@@ -46,7 +46,7 @@ class MoviePlayerView extends View
       codecSupported = supportedCodecs.find (codec) -> codec == fileType
 
       atom.workspaceView.find('.pane.active .item-views').append(this)
-      video = atom.workspaceView.find('.movie-player video')
+      video = atom.workspaceView.find('.video-player video')
       if codecSupported
         video.attr 'src', inputFile
       else

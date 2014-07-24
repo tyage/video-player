@@ -1,4 +1,4 @@
-# movie player for Atom
+# video player for Atom
 
 ## requirements
 - vlc (when you use codecs unsupported by chromium)

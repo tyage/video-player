@@ -1,10 +1,10 @@
 {
-  "name": "movie-player",
-  "main": "./lib/movie-player",
+  "name": "video-player",
+  "main": "./lib/video-player",
   "version": "0.1.0",
-  "description": "Movie player for Atom.",
-  "activationEvents": ["movie-player:toggle"],
-  "repository": "https://github.com/tyage/movie-player",
+  "description": "Video player for Atom.",
+  "activationEvents": ["video-player:toggle"],
+  "repository": "https://github.com/tyage/video-player",
   "license": "MIT",
   "engines": {
     "atom": ">0.50.0"
