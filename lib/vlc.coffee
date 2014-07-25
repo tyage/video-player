@@ -10,7 +10,7 @@ kill = () ->
 
 streaming = (input, errorCallback) ->
   # XXX mac os only
-  vlc = '/Applications/VLC.app/Contents/MacOS/VLC'
+  vlc = atom.config.get('video-player.vlcPath')
   args = [input, '--sout', '#transcode{vcodec=theo,vb=800,scale=1,acodec=vorb,ab=128,channels=2,
     samplerate=44100}:http{mux=ogg,dst=:' + port + '}', '--sout-keep']
   vlcProcess = spawn vlc, args

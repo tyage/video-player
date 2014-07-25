@@ -1,6 +1,9 @@
 VideoPlayerView = require './video-player-view'
 
 module.exports =
+  configDefaults:
+    vlcPath: '/Applications/VLC.app/Contents/MacOS/VLC'
+
   videoPlayerView: null
 
   activate: (state) ->
