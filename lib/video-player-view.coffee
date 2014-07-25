@@ -1,17 +1,5 @@
 {View} = require 'atom'
-{spawn} = require 'child_process'
-fs = require 'fs'
-
-streaming = (input, port, errorCallback) ->
-  # XXX mac os only
-  vlc = '/Applications/VLC.app/Contents/MacOS/VLC'
-  args = [input, '--sout', '#transcode{vcodec=theo,vb=800,scale=1,acodec=vorb,ab=128,channels=2,
-    samplerate=44100}:http{mux=ogg,dst=:' + port + '}', '--sout-keep']
-  vlcProcess = spawn vlc, args
-  vlcProcess.on 'exit', () -> console.log 'streaming finished'
-  vlcProcess.stderr.on 'data', (data) ->
-    console.log data.toString()
-    errorCallback data
+vlc = require './vlc'
 
 module.exports =
 class VideoPlayerView extends View
@@ -27,10 +15,12 @@ class VideoPlayerView extends View
 
   # Tear down any state and detach
   destroy: ->
+    vlc.kill()
     @detach()
 
   toggle: ->
     if @hasParent()
+      vlc.kill()
       @detach()
     else
       # XXX choose from input[type="file"]
@@ -53,6 +43,6 @@ class VideoPlayerView extends View
         # when play unsupported file, try to use VLC
         port = 9530
         streamServer = 'http://localhost:' + port
-        streaming inputFile, port, (data) ->
+        vlc.streaming inputFile, port, (data) ->
           # XXX start when VLC start streaming
           video.attr 'src', streamServer
