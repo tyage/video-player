@@ -2,6 +2,7 @@
 vlc = require './vlc'
 remote = require 'remote'
 dialog = remote.require 'dialog'
+mime = require 'mime'
 
 isCodecSupported = (codec) ->
   # codec support: http://www.chromium.org/audio-video
@@ -39,11 +40,11 @@ class VideoPlayerView extends View
       dialog.showOpenDialog title: 'Open', properties: ['openFile'], (paths) ->
         if (paths != undefined)
           inputFile = paths[0]
-          fileType = ''
+          mimeType = mime.lookup inputFile
 
           atom.workspaceView.find('.pane.active .item-views').append(videoView)
           video = atom.workspaceView.find('.video-player video')
-          if isCodecSupported fileType
+          if isCodecSupported mimeType
             video.attr 'src', inputFile
           else
             # when play unsupported file, try to use VLC
