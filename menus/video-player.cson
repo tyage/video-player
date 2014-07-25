@@ -1,7 +1,8 @@
 # See https://atom.io/docs/latest/creating-a-package#menus for more details
 'context-menu':
   '.overlayer':
-      'Enable video-player': 'video-player:toggle'
+      'Play Video': 'video-player:play'
+      'Stop Video': 'video-player:stop'
 
 'menu': [
   {
@@ -9,7 +10,8 @@
     'submenu': [
       'label': 'video-player'
       'submenu': [
-        { 'label': 'Toggle', 'command': 'video-player:toggle' }
+        { 'label': 'Play', 'command': 'video-player:play' }
+        { 'label': 'Stop', 'command': 'video-player:stop' }
       ]
     ]
   }

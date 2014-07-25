@@ -21,7 +21,8 @@ class VideoPlayerView extends View
       @video autoplay: true
 
   initialize: (serializeState) ->
-    atom.workspaceView.command "video-player:toggle", => @toggle()
+    atom.workspaceView.command "video-player:play", => @play()
+    atom.workspaceView.command "video-player:stop", => @stop()
 
   # Returns an object that can be retrieved when package is activated
   serialize: ->
@@ -31,24 +32,24 @@ class VideoPlayerView extends View
     vlc.kill()
     @detach()
 
-  toggle: ->
-    if @hasParent()
-      vlc.kill()
-      @detach()
-    else
-      videoView = this
-      dialog.showOpenDialog title: 'Open', properties: ['openFile'], (paths) ->
-        if (paths != undefined)
-          inputFile = paths[0]
-          mimeType = mime.lookup inputFile
+  stop: ->
+    vlc.kill()
+    @detach()
 
-          atom.workspaceView.find('.pane.active .item-views').append(videoView)
-          video = atom.workspaceView.find('.video-player video')
-          if isCodecSupported mimeType
-            video.attr 'src', inputFile
-          else
-            # when play unsupported file, try to use VLC
-            streamServer = 'http://localhost:' + vlc.port
-            vlc.streaming inputFile, (data) ->
-              # XXX start when VLC start streaming
-              video.attr 'src', streamServer
+  play: ->
+    videoView = this
+    dialog.showOpenDialog title: 'Open', properties: ['openFile'], (paths) ->
+      if (paths != undefined)
+        inputFile = paths[0]
+        mimeType = mime.lookup inputFile
+
+        atom.workspaceView.find('.pane.active .item-views').append(videoView)
+        video = atom.workspaceView.find('.video-player video')
+        if isCodecSupported mimeType
+          video.attr 'src', inputFile
+        else
+          # when play unsupported file, try to use VLC
+          streamServer = 'http://localhost:' + vlc.port
+          vlc.streaming inputFile, (data) ->
+            # XXX start when VLC start streaming
+            video.attr 'src', streamServer

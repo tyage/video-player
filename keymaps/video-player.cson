@@ -8,4 +8,5 @@
 # For more detailed documentation see
 # https://atom.io/docs/latest/advanced/keymaps
 '.workspace':
-  'ctrl-alt-o': 'video-player:toggle'
+  'ctrl-alt-p': 'video-player:play'
+  'ctrl-alt-s': 'video-player:stop'
