@@ -4,7 +4,7 @@
 
 ## Usage
 1. `Video Player: Play` or `Ctrl-Alt-P` to start
-2. choose video file
+2. select a video file
 3. `Video Player: Stop` or `Ctrl-Alt-S` to stop
 
 ## Requirements
