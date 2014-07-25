@@ -4,25 +4,26 @@
 // for a full listing of what's available.
 @import "ui-variables";
 
-.video-player {
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  z-index: 0;
-  margin: 0;
-  position: absolute;
-  display: block !important;
-
-  video {
+.item-views {
+  > * {
+    z-index: 2;
+  }
+  > .editor {
+    background-color: rgba(40, 40, 40, 0.8) !important;
+  }
+  > .video-player {
     width: 100%;
     height: 100%;
-  }
-}
+    top: 0;
+    left: 0;
+    z-index: 0;
+    margin: 0;
+    position: absolute;
+    display: block !important;
 
-.item-views {
-  > .editor {
-    z-index: 2;
-    background-color: rgba(40, 40, 40, 0.8) !important;
+    video {
+      width: 100%;
+      height: 100%;
+    }
   }
 }
