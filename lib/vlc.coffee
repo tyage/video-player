@@ -1,5 +1,6 @@
 {spawn} = require 'child_process'
 
+port = 9530
 vlcProcess = null
 
 kill = () ->
@@ -7,7 +8,7 @@ kill = () ->
     vlcProcess.kill 'SIGKILL'
     vlcProcess = null
 
-streaming = (input, port, errorCallback) ->
+streaming = (input, errorCallback) ->
   # XXX mac os only
   vlc = '/Applications/VLC.app/Contents/MacOS/VLC'
   args = [input, '--sout', '#transcode{vcodec=theo,vb=800,scale=1,acodec=vorb,ab=128,channels=2,
@@ -21,3 +22,4 @@ streaming = (input, port, errorCallback) ->
 module.exports =
   streaming: streaming
   kill: kill
+  port: port
