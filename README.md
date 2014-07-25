@@ -8,7 +8,7 @@
 3. `Video Player: Stop` or `Ctrl-Alt-S` to stop
 
 ## Requirements
-- vlc (when you use codecs unsupported by chromium)
+- [vlc](http://www.videolan.org/vlc/) (when you use codecs unsupported by chromium)
 
 ### Codecs supported by chromium
 - ogg
