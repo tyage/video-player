@@ -40,6 +40,8 @@ class VideoPlayerView extends View
     videoView = this
     dialog.showOpenDialog title: 'Open', properties: ['openFile'], (paths) ->
       if (paths != undefined)
+        vlc.kill()
+
         inputFile = paths[0]
         mimeType = mime.lookup inputFile
 
