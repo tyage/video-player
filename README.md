@@ -3,9 +3,10 @@
 ![aebfc6f1da94856b8cbdcfc56f4e0dbd](https://cloud.githubusercontent.com/assets/177858/3700235/a8a91544-13dd-11e4-98f9-7c8448cc2041.gif)
 
 ## Usage
-1. `Video Player: Play` or `Ctrl-Alt-P` to start
-2. select a video file
-3. `Video Player: Stop` or `Ctrl-Alt-S` to stop
+1. set the path to vlc in settings
+2. `Video Player: Play` or `Ctrl-Alt-P` to start
+3. select a video file
+4. `Video Player: Stop` or `Ctrl-Alt-S` to stop
 
 ## Requirements
 - [vlc](http://www.videolan.org/vlc/) (when you use codecs unsupported by chromium)
