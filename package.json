@@ -1,9 +1,12 @@
 {
   "name": "video-player",
   "main": "./lib/video-player",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Video player for Atom.",
-  "activationEvents": ["video-player:play", "video-player:stop"],
+  "activationEvents": [
+    "video-player:play",
+    "video-player:stop"
+  ],
   "repository": "https://github.com/tyage/video-player",
   "license": "MIT",
   "engines": {
