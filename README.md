@@ -16,4 +16,4 @@
 - webm
 - wav
 
-for more information, see [http://www.chromium.org/audio-video](Audio/Video)
+for more information, see [Audio/Video](http://www.chromium.org/audio-video)
