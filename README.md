@@ -18,7 +18,15 @@
 
 for more information, see [Audio/Video](http://www.chromium.org/audio-video)
 
-## Other commands
+## Commands
+
+### `Video Player: Play`
+
+It plays the video.
+
+### `Video Player: Stop`
+
+It stops the video.
 
 ### `Video Player: Toggle back and forth`
 
