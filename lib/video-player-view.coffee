@@ -23,8 +23,7 @@ class VideoPlayerView extends View
   initialize: (serializeState) ->
     atom.workspaceView.command "video-player:play", => @play()
     atom.workspaceView.command "video-player:stop", => @stop()
-    atom.workspaceView.command "video-player:display-front", => @displayFront()
-    atom.workspaceView.command "video-player:display-back", => @displayBack()
+    atom.workspaceView.command "video-player:toggle-back-forth", => @toggleBackForth()
     atom.workspaceView.command "video-player:toggle-control", => @toggleControl()
 
   # Returns an object that can be retrieved when package is activated
@@ -59,11 +58,8 @@ class VideoPlayerView extends View
             # XXX start when VLC start streaming
             video.attr 'src', streamServer
 
-  displayFront: ->
-    jQuery(this).addClass 'front'
-
-  displayBack: ->
-    jQuery(this).removeClass 'front'
+  toggleBackForth: ->
+    jQuery(this).toggleClass 'front'
 
   toggleControl: ->
     video = jQuery(this).find 'video'

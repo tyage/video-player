@@ -6,8 +6,7 @@
   "activationEvents": [
     "video-player:play",
     "video-player:stop",
-    "video-player:display-front",
-    "video-player:display-back",
+    "video-player:toggle-back-forth",
     "video-player:toggle-control"
   ],
   "repository": "https://github.com/tyage/video-player",
