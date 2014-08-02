@@ -1,3 +1,7 @@
+## 0.4.0
+
+- video layer switching
+
 ## 0.3.0
 
 - change background css

@@ -1,4 +1,3 @@
-# See https://atom.io/docs/latest/creating-a-package#menus for more details
 'context-menu':
   '.overlayer':
       'Play Video': 'video-player:play'
@@ -12,6 +11,8 @@
       'submenu': [
         { 'label': 'Play', 'command': 'video-player:play' }
         { 'label': 'Stop', 'command': 'video-player:stop' }
+        { 'label': 'Display to front', 'command': 'video-player:display-front' }
+        { 'label': 'Display to back', 'command': 'video-player:display-back' }
       ]
     ]
   }
