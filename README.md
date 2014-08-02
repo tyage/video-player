@@ -17,3 +17,13 @@
 - wav
 
 for more information, see [Audio/Video](http://www.chromium.org/audio-video)
+
+## Other commands
+
+### `Video Player: Toggle back and forth`
+
+It displays the video to front (or back).
+
+### `Video Player: Toggle controller`
+
+It shows (or hides) the video controller.
