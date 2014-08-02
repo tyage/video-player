@@ -1,6 +1,7 @@
 ## 0.4.0
 
-- video layer switching
+- video layer switch
+- video controller switch
 
 ## 0.3.0
 

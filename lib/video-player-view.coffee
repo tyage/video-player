@@ -25,6 +25,7 @@ class VideoPlayerView extends View
     atom.workspaceView.command "video-player:stop", => @stop()
     atom.workspaceView.command "video-player:display-front", => @displayFront()
     atom.workspaceView.command "video-player:display-back", => @displayBack()
+    atom.workspaceView.command "video-player:toggle-control", => @toggleControl()
 
   # Returns an object that can be retrieved when package is activated
   serialize: ->
@@ -41,14 +42,14 @@ class VideoPlayerView extends View
   play: ->
     videoView = this
     dialog.showOpenDialog title: 'Open', properties: ['openFile'], (paths) ->
-      if (paths != undefined)
+      if paths != undefined
         vlc.kill()
 
         inputFile = paths[0]
         mimeType = mime.lookup inputFile
 
-        atom.workspaceView.find('.pane.active .item-views').append(videoView)
-        video = atom.workspaceView.find('.video-player video')
+        atom.workspaceView.find('.pane.active .item-views').append videoView
+        video = atom.workspaceView.find '.video-player video'
         if isCodecSupported mimeType
           video.attr 'src', inputFile
         else
@@ -59,7 +60,12 @@ class VideoPlayerView extends View
             video.attr 'src', streamServer
 
   displayFront: ->
-    jQuery(this).addClass('front')
+    jQuery(this).addClass 'front'
 
   displayBack: ->
-    jQuery(this).removeClass('front')
+    jQuery(this).removeClass 'front'
+
+  toggleControl: ->
+    video = jQuery(this).find 'video'
+    controls = video.attr 'controls'
+    video.attr 'controls', !controls

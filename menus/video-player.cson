@@ -13,6 +13,7 @@
         { 'label': 'Stop', 'command': 'video-player:stop' }
         { 'label': 'Display to front', 'command': 'video-player:display-front' }
         { 'label': 'Display to back', 'command': 'video-player:display-back' }
+        { 'label': 'Toggle controler', 'command': 'video-player:toggle-control' }
       ]
     ]
   }

@@ -7,7 +7,8 @@
     "video-player:play",
     "video-player:stop",
     "video-player:display-front",
-    "video-player:display-back"
+    "video-player:display-back",
+    "video-player:toggle-control"
   ],
   "repository": "https://github.com/tyage/video-player",
   "license": "MIT",
