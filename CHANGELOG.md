@@ -1,7 +1,10 @@
+## 0.5.0
+
+- controller switch
+
 ## 0.4.0
 
 - back and forth switch
-- controller switch
 
 ## 0.3.0
 
