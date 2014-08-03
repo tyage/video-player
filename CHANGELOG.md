@@ -1,3 +1,8 @@
+## 0.6.0
+
+- multiple video files
+- fixed a bug when switch tabs
+
 ## 0.5.0
 
 - controller switch
