@@ -9,7 +9,7 @@
 4. `Video Player: Stop` or `Ctrl-Alt-S` to stop
 
 ## Requirements
-- [vlc](http://www.videolan.org/vlc/) (when you use codecs unsupported by chromium)
+- [vlc](http://www.videolan.org/vlc/) (when the codecs is unsupported by chromium)
 
 ### Codecs supported by chromium
 - ogg
@@ -35,3 +35,9 @@ It displays the video to front (or back).
 ### `Video Player: Toggle controller`
 
 It shows (or hides) the video controller.
+
+### `Video Player: Reload source`
+
+It reload the source of video.
+
+This command is useful when video stops.

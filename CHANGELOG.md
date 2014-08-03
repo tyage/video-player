@@ -1,3 +1,8 @@
+## 0.8.0
+
+- fixed a bug when plays with html5 player after vlc player ended
+- reload source command added
+
 ## 0.7.0
 
 - normalize filename to nfc when play with vlc
