@@ -25,6 +25,7 @@ class VideoPlayerView extends View
     atom.workspaceView.command "video-player:stop", => @stop()
     atom.workspaceView.command "video-player:toggle-back-forth", => @toggleBackForth()
     atom.workspaceView.command "video-player:toggle-control", => @toggleControl()
+    atom.workspaceView.command "video-player:reload-source", => @reloadSrc()
 
   # Returns an object that can be retrieved when package is activated
   serialize: ->
@@ -66,9 +67,9 @@ class VideoPlayerView extends View
     self = this
     streamServer = 'http://localhost:' + vlc.port
     video.attr 'src', streamServer
-    vlc.streaming files, (data) -> self.reloadSrc()
-    video.on 'ended', () -> self.reloadSrc()
-    video.on 'suspend', () -> self.reloadSrc()
+    vlc.streaming files, (data) -> self._reloadSrc video
+    video.on 'ended', () -> self._reloadSrc video
+    video.on 'suspend', () -> self._reloadSrc video
 
   _playWithHtml5Video: (video, files) ->
     counter = 0
@@ -78,10 +79,13 @@ class VideoPlayerView extends View
       if (counter < files.length)
         video.attr 'src', files[counter]
 
-  reloadSrc: ->
-    video = atom.workspaceView.find '.video-player video'
+  _reloadSrc: (video) ->
     src = video.attr 'src'
     video.attr 'src', src
+
+  reloadSrc: ->
+    video = atom.workspaceView.find '.video-player video'
+    this._reloadSrc video
 
   toggleBackForth: ->
     jQuery(this).toggleClass 'front'

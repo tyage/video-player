@@ -3,3 +3,4 @@
   'ctrl-alt-s': 'video-player:stop'
   'ctrl-alt-f': 'video-player:display-front'
   'ctrl-alt-b': 'video-player:display-back'
+  'ctrl-alt-r': 'video-player:reload-source'

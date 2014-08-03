@@ -7,7 +7,8 @@
     "video-player:play",
     "video-player:stop",
     "video-player:toggle-back-forth",
-    "video-player:toggle-control"
+    "video-player:toggle-control",
+    "video-player:reload-source"
   ],
   "repository": "https://github.com/tyage/video-player",
   "license": "MIT",
