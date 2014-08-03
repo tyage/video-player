@@ -39,24 +39,39 @@ class VideoPlayerView extends View
     @detach()
 
   play: ->
-    videoView = this
-    dialog.showOpenDialog title: 'Open', properties: ['openFile'], (paths) ->
-      if paths != undefined
-        vlc.kill()
+    self = this
+    properties = ['openFile', 'multiSelections']
+    dialog.showOpenDialog title: 'Open', properties: properties, (files) ->
+      if files != undefined
+        self._play files
 
-        inputFile = paths[0]
-        mimeType = mime.lookup inputFile
+  _play: (files) ->
+    self = this
 
-        atom.workspaceView.find('.pane.active .item-views').append videoView
-        video = atom.workspaceView.find '.video-player video'
-        if isCodecSupported mimeType
-          video.attr 'src', inputFile
-        else
-          # when play unsupported file, try to use VLC
-          streamServer = 'http://localhost:' + vlc.port
-          vlc.streaming inputFile, (data) ->
-            # XXX start when VLC start streaming
-            video.attr 'src', streamServer
+    vlc.kill()
+
+    atom.workspaceView.find('.pane.active .item-views').append this
+    video = atom.workspaceView.find '.video-player video'
+
+    codecUnsupported = files.find (file) ->
+      mimeType = mime.lookup file
+      !isCodecSupported mimeType
+    if codecUnsupported
+      # when play unsupported file, try to use VLC
+      streamServer = 'http://localhost:' + vlc.port
+      video.attr 'src', streamServer
+      vlc.streaming files, (data) ->
+        # XXX set src when VLC start streaming
+        self.reloadSrc()
+      video.on 'ended', () ->
+        self.reloadSrc()
+    else
+      video.attr 'src', files[0]
+
+  reloadSrc: ->
+    video = atom.workspaceView.find '.video-player video'
+    src = video.attr 'src'
+    video.attr 'src', src
 
   toggleBackForth: ->
     jQuery(this).toggleClass 'front'
