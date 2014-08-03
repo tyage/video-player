@@ -1,3 +1,8 @@
+## 0.7.0
+
+- normalize filename to nfc when play with vlc
+- reload source file when vlc suspended
+
 ## 0.6.0
 
 - multiple video files
