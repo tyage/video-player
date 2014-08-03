@@ -12,7 +12,7 @@ kill = () ->
 streaming = (inputs, errorCallback) ->
   # XXX mac os only
   vlc = atom.config.get('video-player.vlcPath')
-  files = inputs.map (input) -> 'file://' + unorm.nfc(input)
+  files = inputs.map unorm.nfc
   args = files.concat ['--sout', '#transcode{vcodec=theo,vb=800,scale=1,acodec=vorb,ab=128,channels=2,
     samplerate=44100}:http{mux=ogg,dst=:' + port + '}', '--sout-keep']
   vlcProcess = spawn vlc, args
