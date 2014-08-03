@@ -5,7 +5,7 @@
 ## Usage
 1. set the path to vlc in settings
 2. `Video Player: Play` or `Ctrl-Alt-P` to start
-3. select a video file
+3. select a video files
 4. `Video Player: Stop` or `Ctrl-Alt-S` to stop
 
 ## Requirements
