@@ -46,8 +46,6 @@ class VideoPlayerView extends View
         self._play files
 
   _play: (files) ->
-    self = this
-
     vlc.kill()
 
     atom.workspaceView.find('.pane.active .item-views').append this
@@ -58,20 +56,26 @@ class VideoPlayerView extends View
       !isCodecSupported mimeType
     if codecUnsupported
       # when play unsupported file, try to use VLC
-      streamServer = 'http://localhost:' + vlc.port
-      video.attr 'src', streamServer
-      vlc.streaming files, (data) ->
-        # XXX set src when VLC start streaming
-        self.reloadSrc()
-      video.on 'ended', () ->
-        self.reloadSrc()
+      this._playWithVlc video, files
     else
-      counter = 0
-      video.attr 'src', files[counter]
-      video.on 'ended', () ->
-        ++counter
-        if (counter < files.length)
-          video.attr 'src', files[counter]
+      this._playWithHtml5Video video, files
+
+  _playWithVlc: (video, files) ->
+    self = this
+    streamServer = 'http://localhost:' + vlc.port
+    video.attr 'src', streamServer
+    vlc.streaming files, (data) ->
+      self.reloadSrc()
+    video.on 'ended', () ->
+      self.reloadSrc()
+
+  _playWithHtml5Video: (video, files) ->
+    counter = 0
+    video.attr 'src', files[counter]
+    video.on 'ended', () ->
+      ++counter
+      if (counter < files.length)
+        video.attr 'src', files[counter]
 
   reloadSrc: ->
     video = atom.workspaceView.find '.video-player video'
