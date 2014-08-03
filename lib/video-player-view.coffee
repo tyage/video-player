@@ -64,10 +64,9 @@ class VideoPlayerView extends View
     self = this
     streamServer = 'http://localhost:' + vlc.port
     video.attr 'src', streamServer
-    vlc.streaming files, (data) ->
-      self.reloadSrc()
-    video.on 'ended', () ->
-      self.reloadSrc()
+    vlc.streaming files, (data) -> self.reloadSrc()
+    video.on 'ended', () -> self.reloadSrc()
+    video.on 'suspend', () -> self.reloadSrc()
 
   _playWithHtml5Video: (video, files) ->
     counter = 0
