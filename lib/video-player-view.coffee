@@ -66,7 +66,12 @@ class VideoPlayerView extends View
       video.on 'ended', () ->
         self.reloadSrc()
     else
-      video.attr 'src', files[0]
+      counter = 0
+      video.attr 'src', files[counter]
+      video.on 'ended', () ->
+        ++counter
+        if (counter < files.length)
+          video.attr 'src', files[counter]
 
   reloadSrc: ->
     video = atom.workspaceView.find '.video-player video'
