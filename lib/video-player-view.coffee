@@ -48,7 +48,9 @@ class VideoPlayerView extends View
   _play: (files) ->
     vlc.kill()
 
-    atom.workspaceView.find('.pane.active .item-views').append this
+    itemViews = atom.workspaceView.find('.pane.active .item-views')
+    itemViews.find('.video-player').remove()
+    itemViews.append this
     video = atom.workspaceView.find '.video-player video'
 
     codecUnsupported = files.find (file) ->
