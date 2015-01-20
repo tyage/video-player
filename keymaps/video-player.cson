@@ -1,4 +1,4 @@
-'.workspace':
+'atom-workspace':
   'ctrl-alt-p': 'video-player:play'
   'ctrl-alt-s': 'video-player:stop'
   'ctrl-alt-f': 'video-player:display-front'
