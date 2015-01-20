@@ -1,3 +1,7 @@
+## 0.8.1
+
+- `.workspace` is deprecated, so it is replaced with `atom-workspace`
+
 ## 0.8.0
 
 - fixed a bug when plays with html5 player after vlc player ended
