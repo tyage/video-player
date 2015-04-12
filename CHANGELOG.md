@@ -1,3 +1,7 @@
+## 0.8.2
+
+- fixed a bug with `Array.prototype.find`
+
 ## 0.8.1
 
 - `.workspace` is deprecated, so it is replaced with `atom-workspace`
