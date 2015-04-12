@@ -11,8 +11,8 @@ isCodecSupported = (codec) ->
     'video/webm', 'audio/webm',
     'audio/wav', 'audio/x-wav'
   ]
-  codecSupported = supportedCodecs.find (c) -> codec == c
-  codecSupported != undefined
+  codecSupported = supportedCodecs.filter (c) -> codec == c
+  codecSupported.length > 0
 
 module.exports =
 class VideoPlayerView extends View
@@ -54,10 +54,10 @@ class VideoPlayerView extends View
     itemViews.append this
     video = atom.workspaceView.find '.video-player video'
 
-    codecUnsupported = files.find (file) ->
+    codecUnsupported = files.filter (file) ->
       mimeType = mime.lookup file
       !isCodecSupported mimeType
-    if codecUnsupported
+    if codecUnsupported.length > 0
       # when play unsupported file, try to use VLC
       this._playWithVlc video, files
     else
