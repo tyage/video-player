@@ -1,7 +1,7 @@
 {
   "name": "video-player",
   "main": "./lib/video-player",
-  "version": "0.8.2",
+  "version": "0.8.3",
   "description": "Video player for Atom.",
   "activationEvents": [
     "video-player:play",
