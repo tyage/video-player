@@ -1,3 +1,7 @@
+## 0.8.3
+
+- moved stylesheets dir(deprecated) to styles
+
 ## 0.8.2
 
 - fixed a bug with `Array.prototype.find`
