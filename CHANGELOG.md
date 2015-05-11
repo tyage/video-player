@@ -1,3 +1,9 @@
+## 0.9.0
+
+- we now use babel instead of coffeescript
+- we now use json instead of cson
+- fixed deprecated codes
+
 ## 0.8.3
 
 - moved stylesheets dir(deprecated) to styles
