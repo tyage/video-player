@@ -3,13 +3,15 @@
   "main": "./lib/video-player",
   "version": "0.8.3",
   "description": "Video player for Atom.",
-  "activationEvents": [
-    "video-player:play",
-    "video-player:stop",
-    "video-player:toggle-back-forth",
-    "video-player:toggle-control",
-    "video-player:reload-source"
-  ],
+  "activationCommands": {
+    "atom-workspace": [
+      "video-player:play",
+      "video-player:stop",
+      "video-player:toggle-back-forth",
+      "video-player:toggle-control",
+      "video-player:reload-source"
+    ]
+  },
   "repository": "https://github.com/tyage/video-player",
   "license": "MIT",
   "engines": {

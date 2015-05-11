@@ -1,0 +1,21 @@
+{
+  "menu": [
+    {
+      "label": "Packages",
+      "submenu": [
+        {
+          "label": "video-player",
+          "submenu": [
+            { "label": "Undo", "command":"core:undo" },
+            { "label": "Redo", "command":"core:redo" },
+            { "label": "Play", "command": "video-player:play" },
+            { "label": "Stop", "command": "video-player:stop" },
+            { "label": "Toggle back and forth", "command": "video-player:toggle-back-forth" },
+            { "label": "Toggle controler", "command": "video-player:toggle-control" },
+            { "label": "Reload source", "command": "video-player:reload-source" }
+          ]
+        }
+      ]
+    }
+  ]
+}
