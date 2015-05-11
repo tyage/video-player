@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "mime": "~1.2.11",
-    "unorm": "~1.3.3"
+    "unorm": "~1.3.3",
+    "atom-space-pen-views": "^2.0.3"
   }
 }
