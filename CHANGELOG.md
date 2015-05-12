@@ -1,3 +1,7 @@
+## 0.9.1
+
+- remove atom-space-pen-views
+
 ## 0.9.0
 
 - we now use babel instead of coffeescript
