@@ -1,36 +1,24 @@
 'use babel';
 
-let WorkspaceView = require('atom').WorkspaceView;
-let VideoPlayer = require('../lib/video-player');
 let remote = require('remote');
 let dialog = remote.require('dialog');
 
 describe("VideoPlayer", () => {
-  let activationPromise;
-
-  beforeEach(() => {
-    expect(atom.packages.isPackageActive('video-player')).toBe(false);
-
-    atom.project.setPaths([path.join(__dirname, 'sample')]);
-
-    let workspaceElement = atom.views.getView(atom.workspace)
-
-    waitsForPromise(() => atom.workspace.open('README.md'));
-
-    runs(() => {
-      jasmine.attachToDOM(workspaceElement)
-      editor = atom.workspace.getActiveTextEditor()
-      editorView = atom.views.getView(editor)
-
-      activationPromise = atom.packages.activatePackage('video-player');
-      activationPromise.fail((e) => console.log(e));
-    });
-  });
+  let activationPromise = atom.packages.activatePackage('video-player');
 
   describe("when the video-player:start event is triggered", () => {
+    beforeEach(() => {
+      expect(atom.packages.isPackageActive('video-player')).toBe(false);
+
+      runs(() => {
+        activationPromise.fail((e) => console.log(e));
+      });
+    });
+
     it("then dialog opened", () => {
-      atom.commands.dispatch(editorView, 'video-player:stop');
-      waitsForPromise(() => atom.packages.activatePackage('video-player'));
+      let workspaceElement = atom.views.getView(atom.workspace);
+      atom.commands.dispatch(workspaceElement, 'video-player:stop');
+      waitsForPromise(() => activationPromise);
 
       let dialogOpened = false;
       let originalDialogOpen = dialog.showOpenDialog.bind(null);
@@ -39,7 +27,7 @@ describe("VideoPlayer", () => {
         return originalDialogOpen.call(dialog, ...args);
       };
 
-      atom.commands.dispatch(editorView, 'video-player:play');
+      atom.commands.dispatch(workspaceElement, 'video-player:play');
 
       expect(dialogOpened).toBe(true);
     });
