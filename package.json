@@ -15,7 +15,7 @@
   "repository": "https://github.com/tyage/video-player",
   "license": "MIT",
   "engines": {
-    "atom": ">0.50.0"
+    "atom": ">=0.186.0 <2.0.0"
   },
   "dependencies": {
     "mime": "~1.2.11",
