@@ -1,3 +1,8 @@
+## 0.9.2
+
+- fixed bug that missed return
+- upgrade engines
+
 ## 0.9.1
 
 - remove atom-space-pen-views
