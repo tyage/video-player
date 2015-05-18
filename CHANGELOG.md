@@ -1,3 +1,7 @@
+## 0.9.3
+
+- start VLC with dummy interface
+
 ## 0.9.2
 
 - fixed bug that missed return
