@@ -1,3 +1,7 @@
+## 0.9.4
+
+- fix args for VLC
+
 ## 0.9.3
 
 - start VLC with dummy interface
