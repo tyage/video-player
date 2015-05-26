@@ -1,3 +1,8 @@
+## 0.11.0
+
+- added encoding option
+- added port number option
+
 ## 0.10.0
 
 - fix args for VLC
