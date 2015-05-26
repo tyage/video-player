@@ -4,14 +4,14 @@
 
 ## Usage
 
-1. set the path to vlc in settings
+1. Set the path to vlc in settings
 2. `Video Player: Play` or `Ctrl-Alt-P` to start
-3. select a video files
+3. Select video files
 4. `Video Player: Stop` or `Ctrl-Alt-S` to stop
 
 ## Requirements
 
-- [vlc](http://www.videolan.org/vlc/) (when the codecs is unsupported by chromium)
+- [vlc](http://www.videolan.org/vlc/) (Vlc is used when the codecs are unsupported by chromium)
 
 ### Codecs supported by chromium
 
