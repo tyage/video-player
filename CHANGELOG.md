@@ -3,6 +3,11 @@
 - Do not check mimetype and play with video element ( #7 )
 - Added `Always use VLC` option ( #8 )
 
+## 0.11.0
+
+- added encoding option
+- added port number option
+
 ## 0.10.0
 
 - fix args for VLC
