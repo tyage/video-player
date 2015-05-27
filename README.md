@@ -4,22 +4,14 @@
 
 ## Usage
 
-1. Set the path to vlc in settings
+1. Configure some settings
 2. `Video Player: Play` or `Ctrl-Alt-P` to start
 3. Select video files
 4. `Video Player: Stop` or `Ctrl-Alt-S` to stop
 
 ## Requirements
 
-- [vlc](http://www.videolan.org/vlc/) (Vlc is used when the codecs are unsupported by chromium)
-
-### Codecs supported by chromium
-
-- ogg
-- webm
-- wav
-
-for more information, see [Audio/Video](http://www.chromium.org/audio-video)
+- [vlc](http://www.videolan.org/vlc/) (VLC is used when the codecs are unsupported)
 
 ## Commands
 
