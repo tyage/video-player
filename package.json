@@ -5,7 +5,8 @@
   "description": "Video player for Atom.",
   "activationCommands": {
     "atom-workspace": [
-      "video-player:play",
+      "video-player:play-in-new-tab",
+      "video-player:play-in-background",
       "video-player:stop",
       "video-player:toggle-back-forth",
       "video-player:toggle-control",
