@@ -6,8 +6,8 @@
         {
           "label": "video-player",
           "submenu": [
-            { "label": "Play in background", "command": "video-player:play-in-background" },
             { "label": "Play in a new tab", "command": "video-player:play-in-new-tab" },
+            { "label": "Play in background", "command": "video-player:play-in-background" },
             { "label": "Stop", "command": "video-player:stop" },
             { "label": "Toggle back and forth", "command": "video-player:toggle-back-forth" },
             { "label": "Toggle controler", "command": "video-player:toggle-control" },

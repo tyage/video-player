@@ -15,24 +15,32 @@
 
 ## Commands
 
-### `Video Player: Play`
+### For videos that runs in new tab
 
-It plays the video.
+#### `Video Player: Play In New Tab`
 
-### `Video Player: Stop`
+It plays the video in a new tab.
 
-It stops the video.
+### For video that runs in background
 
-### `Video Player: Toggle back and forth`
+#### `Video Player: Play In Background`
 
-It displays the video to front (or back).
+It plays the video in background.
 
-### `Video Player: Toggle controller`
+#### `Video Player: Stop`
 
-It shows (or hides) the video controller.
+It stops background video.
 
-### `Video Player: Reload source`
+#### `Video Player: Toggle back and forth`
 
-It reload the source of video.
+It displays the background video to front (or back).
 
-This command is useful when video stops.
+#### `Video Player: Toggle controller`
+
+It shows (or hides) the background video controller.
+
+#### `Video Player: Reload source`
+
+It reload the source of background video.
+
+This command is useful when video stops unexpectedly.
