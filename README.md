@@ -4,10 +4,17 @@
 
 ## Usage
 
-1. Configure some settings
-2. `Video Player: Play` or `Ctrl-Alt-P` to start
-3. Select video files
-4. `Video Player: Stop` or `Ctrl-Alt-S` to stop
+### Play videos in background
+
+1. `Video Player: Play In Background` or `Ctrl-Alt-P` to start
+2. Select video files
+3. `Video Player: Stop` or `Ctrl-Alt-S` to stop
+
+### Play videos in new tab
+
+1. `Video Player: Play In New Tab` to start
+2. Select video files
+3. Close tab to stop
 
 ## Requirements
 
