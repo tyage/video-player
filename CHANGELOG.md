@@ -1,3 +1,7 @@
+## 2.0.0
+
+- Play video in new tab is available ( #16 )
+
 ## 1.0.0
 
 - Do not check mimetype and play with video element ( #7 )

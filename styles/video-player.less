@@ -1,22 +1,25 @@
 @import "ui-variables";
 
+video-player {
+  &::shadow {
+    video {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+/* TODO: check if item-views has background player */
 .item-views {
-  > * {
+  > *:not(video-player-tab):not(video-player-background) {
     z-index: 2;
     opacity: 0.8;
   }
-  video-player {
-    z-index: 0;
-    opacity: 1;
+  video-player-background {
     display: block !important;
-    &.front {
-      z-index: 3;
-    }
-
-    &::shadow {
-      video {
-        width: 100%;
-        height: 100%;
+    video-player {
+      &.front {
+        z-index: 3;
       }
     }
   }

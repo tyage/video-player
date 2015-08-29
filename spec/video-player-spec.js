@@ -27,7 +27,7 @@ describe("VideoPlayer", () => {
         return originalDialogOpen.call(dialog, ...args);
       };
 
-      atom.commands.dispatch(workspaceElement, 'video-player:play');
+      atom.commands.dispatch(workspaceElement, 'video-player:play-in-new-tab');
 
       expect(dialogOpened).toBe(true);
     });
