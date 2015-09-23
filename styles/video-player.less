@@ -9,6 +9,19 @@ video-player {
   }
 }
 
+video-player-background, video-player-tab {
+  &::shadow {
+    video-player {
+      &::shadow {
+        video {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+  }
+}
+
 /* TODO: check if item-views has background player */
 .item-views {
   > *:not(video-player-tab):not(video-player-background) {
@@ -17,10 +30,8 @@ video-player {
   }
   video-player-background {
     display: block !important;
-    video-player {
-      &.front {
-        z-index: 3;
-      }
+    &.front {
+      z-index: 3;
     }
   }
 }
