@@ -1,3 +1,7 @@
+## 2.0.1
+
+- Fixed that stylesheets is invalid
+
 ## 2.0.0
 
 - Play video in new tab is available ( #16 )
