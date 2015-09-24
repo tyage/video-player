@@ -10,7 +10,9 @@
       "video-player:stop",
       "video-player:toggle-back-forth",
       "video-player:toggle-control",
-      "video-player:reload-source"
+      "video-player:reload-source",
+      "video-player:pause",
+      "video-player:resume"
     ]
   },
   "repository": "https://github.com/tyage/video-player",
