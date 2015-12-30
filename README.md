@@ -51,3 +51,14 @@ It shows (or hides) the background video controller.
 It reload the source of background video.
 
 This command is useful when video stops unexpectedly.
+
+#### `Video Player: Pause`
+
+It pauses the background video.
+
+#### `Video Player: Resume`
+
+It resumes the background video.
+
+This command is useful when the video is paused.
+
