@@ -1,4 +1,8 @@
-## 2.0.1
+## 2.2.0
+
+- play / resume HTML5 video are available. Thank you, @DCKT ! ( #19 )
+
+## 2.1.0
 
 - Fixed that stylesheets is invalid
 
