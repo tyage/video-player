@@ -1,3 +1,7 @@
+## 2.3.0
+
+- Fixed old style code. ( #21 )
+
 ## 2.2.0
 
 - play / resume HTML5 video are available. Thank you, @DCKT ! ( #19 )
