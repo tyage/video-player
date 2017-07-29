@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/tyage/video-player.svg?branch=master)](https://travis-ci.org/tyage/video-player)
 
-![aebfc6f1da94856b8cbdcfc56f4e0dbd](https://cloud.githubusercontent.com/assets/177858/3700235/a8a91544-13dd-11e4-98f9-7c8448cc2041.gif)
+![sample image](https://user-images.githubusercontent.com/177858/28745983-aa4bd1a8-74be-11e7-94cc-76632035ca7a.gif)
 
 ## Usage
 
