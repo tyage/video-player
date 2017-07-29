@@ -1,5 +1,10 @@
-## 2.3.0
+## 2.4.0
 
+- Add Travis CI to check test passing
+- Show video control in new tab ( #20 )
+- Add background video control toggle setting ( #17 )
+
+## 2.3.0
 - Fixed old style code. ( #21 )
 
 ## 2.2.0
