@@ -1,5 +1,7 @@
 # Video player for Atom
 
+[![Build Status](https://travis-ci.org/tyage/video-player.svg?branch=master)](https://travis-ci.org/tyage/video-player)
+
 ![aebfc6f1da94856b8cbdcfc56f4e0dbd](https://cloud.githubusercontent.com/assets/177858/3700235/a8a91544-13dd-11e4-98f9-7c8448cc2041.gif)
 
 ## Usage
@@ -61,4 +63,3 @@ It pauses the background video.
 It resumes the background video.
 
 This command is useful when the video is paused.
-
