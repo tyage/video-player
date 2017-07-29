@@ -1,27 +1,26 @@
 'use babel';
 
-let remote = require('remote');
-let dialog = remote.require('dialog');
+const { dialog } = require('electron').remote
 
 describe("VideoPlayer", () => {
-  let activationPromise = atom.packages.activatePackage('video-player');
+  const activationPromise = atom.packages.activatePackage('video-player');
 
   describe("when the video-player:start event is triggered", () => {
     beforeEach(() => {
       expect(atom.packages.isPackageActive('video-player')).toBe(false);
 
       runs(() => {
-        activationPromise.fail((e) => console.log(e));
+        activationPromise.catch((e) => console.log(e));
       });
     });
 
     it("then dialog opened", () => {
-      let workspaceElement = atom.views.getView(atom.workspace);
+      const workspaceElement = atom.views.getView(atom.workspace);
       atom.commands.dispatch(workspaceElement, 'video-player:stop');
       waitsForPromise(() => activationPromise);
 
       let dialogOpened = false;
-      let originalDialogOpen = dialog.showOpenDialog.bind(null);
+      const originalDialogOpen = dialog.showOpenDialog.bind(null);
       dialog.showOpenDialog = (...args) => {
         dialogOpened = true;
         return originalDialogOpen.call(dialog, ...args);
